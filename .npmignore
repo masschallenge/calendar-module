@@ -9,6 +9,3 @@ src/
 node_modules/
 .size-snapshot
 CHANGELOG.md
-rollup.config.js
-yarn.lock
-package.json
