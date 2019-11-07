@@ -1,0 +1,7 @@
+test/
+stories/
+examples/
+src/
+.babelrc
+.eslintrc
+.gitignore
