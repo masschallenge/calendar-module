@@ -15421,17 +15421,9 @@
               'button',
               {
                 type: 'button',
-                onClick: this.navigate.bind(null, navigate.TODAY),
-              },
-              messages.today
-            ),
-            React__default.createElement(
-              'button',
-              {
-                type: 'button',
                 onClick: this.navigate.bind(null, navigate.PREVIOUS),
               },
-              messages.previous
+              '<'
             ),
             React__default.createElement(
               'button',
@@ -15439,7 +15431,7 @@
                 type: 'button',
                 onClick: this.navigate.bind(null, navigate.NEXT),
               },
-              messages.next
+              '>'
             )
           ),
           React__default.createElement(

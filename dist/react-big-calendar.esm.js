@@ -5208,17 +5208,9 @@ var Toolbar =
             'button',
             {
               type: 'button',
-              onClick: this.navigate.bind(null, navigate.TODAY),
-            },
-            messages.today
-          ),
-          React.createElement(
-            'button',
-            {
-              type: 'button',
               onClick: this.navigate.bind(null, navigate.PREVIOUS),
             },
-            messages.previous
+            '<'
           ),
           React.createElement(
             'button',
@@ -5226,7 +5218,7 @@ var Toolbar =
               type: 'button',
               onClick: this.navigate.bind(null, navigate.NEXT),
             },
-            messages.next
+            '>'
           )
         ),
         React.createElement(

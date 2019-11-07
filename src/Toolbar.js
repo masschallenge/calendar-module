@@ -13,23 +13,23 @@ class Toolbar extends React.Component {
     return (
       <div className="rbc-toolbar">
         <span className="rbc-btn-group">
-          <button
+          {/* <button
             type="button"
             onClick={this.navigate.bind(null, navigate.TODAY)}
           >
             {messages.today}
-          </button>
+          </button> */}
           <button
             type="button"
             onClick={this.navigate.bind(null, navigate.PREVIOUS)}
           >
-            {messages.previous}
+            {'<'}
           </button>
           <button
             type="button"
             onClick={this.navigate.bind(null, navigate.NEXT)}
           >
-            {messages.next}
+            {'>'}
           </button>
         </span>
 
