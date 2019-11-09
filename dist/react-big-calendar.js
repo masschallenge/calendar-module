@@ -8435,7 +8435,11 @@
         slotMetrics = props.slotMetrics,
         components = props.components
       var continuesPrior = slotMetrics.continuesPrior(event)
-      var continuesAfter = slotMetrics.continuesAfter(event)
+      var continuesAfter = slotMetrics.continuesAfter(event) // let NewEvents = event.forEach(event => {
+      //   event.start = event.start_date_time
+      //   event.end = event.end_date_time
+      // })
+
       return React__default.createElement(EventCell, {
         event: event,
         getters: getters,
@@ -15440,13 +15444,6 @@
               className: 'rbc-toolbar-label',
             },
             label
-          ),
-          React__default.createElement(
-            'span',
-            {
-              className: 'rbc-btn-group',
-            },
-            this.viewNamesGroup(messages)
           )
         )
       }
@@ -16984,6 +16981,15 @@
           localizer: localizer,
           length: length,
         })
+
+        var formattedEvent = function formattedEvent(events) {
+          events.forEach(function(event) {
+            event.start = event.start_date_time
+            event.end = event.end_date_time
+          })
+          return events
+        }
+
         return React__default.createElement(
           'div',
           _extends({}, elementProps, {
@@ -17003,7 +17009,7 @@
           React__default.createElement(
             View,
             _extends({}, props, {
-              events: events,
+              events: formattedEvent(events),
               date: current,
               getNow: getNow,
               length: length,
@@ -17996,7 +18002,7 @@
   var formats$2 = {
     dateFormat: 'dd',
     dayFormat: 'eee dd/MM',
-    weekdayFormat: 'eee',
+    weekdayFormat: 'e',
     selectRangeFormat: timeRangeFormat$2,
     eventTimeRangeFormat: timeRangeFormat$2,
     eventTimeRangeStartFormat: timeRangeStartFormat$2,

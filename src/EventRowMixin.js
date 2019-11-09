@@ -40,6 +40,10 @@ export default {
 
     let continuesPrior = slotMetrics.continuesPrior(event)
     let continuesAfter = slotMetrics.continuesAfter(event)
+    // let NewEvents = event.forEach(event => {
+    //   event.start = event.start_date_time
+    //   event.end = event.end_date_time
+    // })
 
     return (
       <EventCell

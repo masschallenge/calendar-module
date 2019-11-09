@@ -886,6 +886,15 @@ class Calendar extends React.Component {
     let CalToolbar = components.toolbar || Toolbar
     const label = View.title(current, { localizer, length })
 
+    let formattedEvent = events => {
+      events.forEach(event => {
+        event.start = event.start_date_time
+        event.end = event.end_date_time
+      })
+
+      return events
+    }
+
     return (
       <div
         {...elementProps}
@@ -905,7 +914,7 @@ class Calendar extends React.Component {
         )}
         <View
           {...props}
-          events={events}
+          events={formattedEvent(events)}
           date={current}
           getNow={getNow}
           length={length}

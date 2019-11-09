@@ -35,7 +35,7 @@ class Toolbar extends React.Component {
 
         <span className="rbc-toolbar-label">{label}</span>
 
-        <span className="rbc-btn-group">{this.viewNamesGroup(messages)}</span>
+        {/* <span className="rbc-btn-group">{this.viewNamesGroup(messages)}</span> */}
       </div>
     )
   }

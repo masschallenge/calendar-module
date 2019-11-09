@@ -1459,7 +1459,11 @@ var EventRowMixin = {
       slotMetrics = props.slotMetrics,
       components = props.components
     var continuesPrior = slotMetrics.continuesPrior(event)
-    var continuesAfter = slotMetrics.continuesAfter(event)
+    var continuesAfter = slotMetrics.continuesAfter(event) // let NewEvents = event.forEach(event => {
+    //   event.start = event.start_date_time
+    //   event.end = event.end_date_time
+    // })
+
     return React.createElement(EventCell, {
       event: event,
       getters: getters,
@@ -5227,13 +5231,6 @@ var Toolbar =
             className: 'rbc-toolbar-label',
           },
           label
-        ),
-        React.createElement(
-          'span',
-          {
-            className: 'rbc-btn-group',
-          },
-          this.viewNamesGroup(messages)
         )
       )
     }
@@ -5624,6 +5621,15 @@ var Calendar =
         localizer: localizer,
         length: length,
       })
+
+      var formattedEvent = function formattedEvent(events) {
+        events.forEach(function(event) {
+          event.start = event.start_date_time
+          event.end = event.end_date_time
+        })
+        return events
+      }
+
       return React.createElement(
         'div',
         _extends({}, elementProps, {
@@ -5643,7 +5649,7 @@ var Calendar =
         React.createElement(
           View,
           _extends({}, props, {
-            events: events,
+            events: formattedEvent(events),
             date: current,
             getNow: getNow,
             length: length,
@@ -6623,7 +6629,7 @@ var weekRangeFormat$2 = function weekRangeFormat(_ref5, culture, local) {
 var formats$2 = {
   dateFormat: 'dd',
   dayFormat: 'eee dd/MM',
-  weekdayFormat: 'eee',
+  weekdayFormat: 'e',
   selectRangeFormat: timeRangeFormat$2,
   eventTimeRangeFormat: timeRangeFormat$2,
   eventTimeRangeStartFormat: timeRangeStartFormat$2,
