@@ -5,10 +5,7 @@ import { navigate } from './utils/constants'
 
 class Toolbar extends React.Component {
   render() {
-    let {
-      localizer: { messages },
-      label,
-    } = this.props
+    let { label } = this.props
 
     return (
       <div className="rbc-toolbar">
@@ -23,13 +20,13 @@ class Toolbar extends React.Component {
             type="button"
             onClick={this.navigate.bind(null, navigate.PREVIOUS)}
           >
-            {'<'}
+            <i class="fas fa-chevron-left" />
           </button>
           <button
             type="button"
             onClick={this.navigate.bind(null, navigate.NEXT)}
           >
-            {'>'}
+            <i class="fas fa-chevron-right" />
           </button>
         </span>
 

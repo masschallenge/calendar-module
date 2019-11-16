@@ -19,9 +19,9 @@ let weekRangeFormat = ({ start, end }, culture, local) =>
   local.format(end, dates.eq(start, end, 'month') ? 'DD' : 'MMMM DD', culture)
 
 export let formats = {
-  dateFormat: 'DD',
+  dateFormat: 'D',
   dayFormat: 'DD ddd',
-  weekdayFormat: 'ddd',
+  weekdayFormat: 'd',
 
   selectRangeFormat: timeRangeFormat,
   eventTimeRangeFormat: timeRangeFormat,

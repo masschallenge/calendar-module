@@ -311,6 +311,7 @@ class Calendar extends React.Component {
      * (event: Object, e: SyntheticEvent) => void
      * ```
      */
+
     onDoubleClickEvent: PropTypes.func,
 
     /**
@@ -967,7 +968,6 @@ class Calendar extends React.Component {
       date: newDate || date || today,
       today,
     })
-
     onNavigate(date, view, action)
     this.handleRangeChange(date, ViewComponent)
   }

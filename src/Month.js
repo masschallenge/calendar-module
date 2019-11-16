@@ -173,13 +173,14 @@ class MonthView extends React.Component {
     let first = row[0]
     let last = row[row.length - 1]
     let HeaderComponent = components.header || Header
+    const WeekDays = ['S', 'M', 'T', 'W', 'T', 'F', 'S']
 
     return dates.range(first, last, 'day').map((day, idx) => (
       <div key={'header_' + idx} className="rbc-header">
         <HeaderComponent
           date={day}
           localizer={localizer}
-          label={localizer.format(day, 'weekdayFormat')}
+          label={WeekDays[localizer.format(day, 'weekdayFormat')]}
         />
       </div>
     ))

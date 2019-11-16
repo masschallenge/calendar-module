@@ -30,6 +30,7 @@ class EventCell extends React.Component {
     let end = accessors.end(event)
     let start = accessors.start(event)
     let allDay = accessors.allDay(event)
+    let newTitle = localizer.format(event.end, 'DD')
 
     let showAsAllDay =
       isAllDay || allDay || dates.diff(start, dates.ceil(end, 'day'), 'day') > 1
@@ -43,14 +44,14 @@ class EventCell extends React.Component {
             event={event}
             continuesPrior={continuesPrior}
             continuesAfter={continuesAfter}
-            title={title}
+            title={localizer.format(event.end, 'DD')}
             isAllDay={allDay}
             localizer={localizer}
             slotStart={slotStart}
             slotEnd={slotEnd}
           />
         ) : (
-          title
+          newTitle
         )}
       </div>
     )

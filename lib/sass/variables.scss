@@ -1,4 +1,4 @@
-$out-of-range-color: lighten(#333, 40%) !default;
+$out-of-range-color: #8d8f9478 !default;
 $out-of-range-bg-color: #fff !default;
 
 $calendar-border: #ddd !default;
@@ -12,12 +12,12 @@ $time-selection-color: white !default;
 $time-selection-bg-color: rgba(0, 0, 0, 0.5) !default;
 $date-selection-bg-color: rgba(0, 0, 0, 0.1) !default;
 
-$event-bg: #3174ad !default;
-$event-border: darken(#3174ad, 10%) !default;
-$event-outline: #3b99fc !default;
-$event-color: #fff !default;
-$event-border-radius: 5px !default;
-$event-padding: 2px 5px !default;
+$event-bg: #0eacbd !default;
+$event-border: #87d5de !default;
+$event-outline: #87d5de !default;
+$event-color: #87d5de !default;
+$event-border-radius: 50% !default;
+$event-padding: 6px 0px !default;
 $event-zindex: 4 !default;
 
 $btn-color: #373a3c !default;
