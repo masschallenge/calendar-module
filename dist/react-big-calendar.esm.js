@@ -4290,9 +4290,7 @@ function (_React$Component) {
   var _proto = Toolbar.prototype;
 
   _proto.render = function render() {
-    var _this$props = this.props,
-        messages = _this$props.localizer.messages,
-        label = _this$props.label;
+    var label = this.props.label;
     return React.createElement("div", {
       className: "rbc-toolbar"
     }, React.createElement("span", {
@@ -4473,7 +4471,6 @@ function (_React$Component) {
         date: newDate || date || today,
         today: today
       }));
-      props.monthToggle(date);
       onNavigate(date, view, action);
 
       _this.handleRangeChange(date, ViewComponent);
@@ -4955,15 +4952,6 @@ Calendar.propTypes = process.env.NODE_ENV !== "production" ? {
 
   /**
    * Callback fired when a calendar event is clicked twice.
-   *
-   * ```js
-   * (event: Object, e: SyntheticEvent) => void
-   * ```
-   */
-  monthToggle: PropTypes.func,
-
-  /**
-   * Callback fired when a toolbar clicked twice.
    *
    * ```js
    * (event: Object, e: SyntheticEvent) => void
