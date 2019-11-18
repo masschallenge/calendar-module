@@ -20,13 +20,13 @@ class Toolbar extends React.Component {
             type="button"
             onClick={this.navigate.bind(null, navigate.PREVIOUS)}
           >
-            <i class="fas fa-chevron-left" />
+            <i className="fas fa-chevron-left" />
           </button>
           <button
             type="button"
             onClick={this.navigate.bind(null, navigate.NEXT)}
           >
-            <i class="fas fa-chevron-right" />
+            <i className="fas fa-chevron-right" />
           </button>
         </span>
 
