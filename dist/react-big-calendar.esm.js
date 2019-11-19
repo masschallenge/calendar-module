@@ -4299,12 +4299,12 @@ function (_React$Component) {
       type: "button",
       onClick: this.navigate.bind(null, navigate.PREVIOUS)
     }, React.createElement("i", {
-      class: "fas fa-chevron-left"
+      className: "fas fa-chevron-left"
     })), React.createElement("button", {
       type: "button",
       onClick: this.navigate.bind(null, navigate.NEXT)
     }, React.createElement("i", {
-      class: "fas fa-chevron-right"
+      className: "fas fa-chevron-right"
     }))), React.createElement("span", {
       className: "rbc-toolbar-label"
     }, label));

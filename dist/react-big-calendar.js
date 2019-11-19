@@ -13254,12 +13254,12 @@
         type: "button",
         onClick: this.navigate.bind(null, navigate.PREVIOUS)
       }, React__default.createElement("i", {
-        class: "fas fa-chevron-left"
+        className: "fas fa-chevron-left"
       })), React__default.createElement("button", {
         type: "button",
         onClick: this.navigate.bind(null, navigate.NEXT)
       }, React__default.createElement("i", {
-        class: "fas fa-chevron-right"
+        className: "fas fa-chevron-right"
       }))), React__default.createElement("span", {
         className: "rbc-toolbar-label"
       }, label));
