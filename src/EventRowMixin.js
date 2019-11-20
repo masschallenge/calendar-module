@@ -40,10 +40,6 @@ export default {
 
     let continuesPrior = slotMetrics.continuesPrior(event)
     let continuesAfter = slotMetrics.continuesAfter(event)
-    // let NewEvents = event.forEach(event => {
-    //   event.start = event.start_date_time
-    //   event.end = event.end_date_time
-    // })
 
     return (
       <EventCell
@@ -64,6 +60,9 @@ export default {
   },
 
   renderSpan(slots, len, key, content = ' ') {
+    if (len === 5) {
+      len = 6
+    }
     let per = (Math.abs(len) / slots) * 100 + '%'
 
     return (
@@ -73,7 +72,10 @@ export default {
         // IE10/11 need max-width. flex-basis doesn't respect box-sizing
         style={{ WebkitFlexBasis: per, flexBasis: per, maxWidth: per }}
       >
+        {per}
         {content}
+        {slots}
+        {len}
       </div>
     )
   },

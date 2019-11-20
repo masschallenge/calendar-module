@@ -9,10 +9,11 @@ class EventRow extends React.Component {
       segments,
       slotMetrics: { slots },
       className,
+      levelId,
     } = this.props
 
     let lastEnd = 1
-
+    if (levelId !== 0) return null
     return (
       <div className={clsx(className, 'rbc-row')}>
         {segments.reduce((row, { event, left, right, span }, li) => {

@@ -3,6 +3,7 @@
 .rbc-row {
   display: flex;
   flex-direction: row;
+  justify-content: space-evenly;
 }
 
 .rbc-row-segment {
@@ -11,8 +12,9 @@
   .rbc-event-content {
     text-align: center;
     color: $event-bg;
-    font-weight: 400;
-    font-size: 16px;
+    font-weight: 700;
+    font-size: 13px;
+    padding-bottom: 1px;
   }
   .rbc-event.rbc-selected {
     .rbc-event-content {
@@ -33,6 +35,7 @@
   font-size: 85%;
   height: auto;
   line-height: normal;
+  display: none;
 }
 
 .rbc-month-view {
@@ -75,8 +78,12 @@
   font-style: normal;
   font-weight: 400;
   font-size: 13px;
-  line-height: 23px;
-  margin-top: 2.2%;
+  max-width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 1px;
 
   &.rbc-now {
     font-weight: bold;
@@ -99,10 +106,13 @@
   flex-direction: row;
   flex: 1 0 0;
   overflow: hidden;
+  justify-content: space-evenly;
 }
 
 .rbc-day-bg {
   flex: 1 0 0%;
+  max-width: 36px;
+  height: 36px;
 
   & + & {
     border: none;

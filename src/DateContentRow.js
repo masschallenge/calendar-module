@@ -162,15 +162,20 @@ class DateContentRow extends React.Component {
           )}
           <WeekWrapper isAllDay={isAllDay} {...eventRowProps}>
             {levels.map((segs, idx) => (
-              <EventRow key={idx} segments={segs} {...eventRowProps} />
+              <EventRow
+                key={idx}
+                levelId={idx}
+                segments={segs}
+                {...eventRowProps}
+              />
             ))}
-            {!!extra.length && (
+            {/* {!!extra.length && (
               <EventEndingRow
                 segments={extra}
                 onShowMore={this.handleShowMore}
                 {...eventRowProps}
               />
-            )}
+            )} */}
           </WeekWrapper>
         </div>
       </div>

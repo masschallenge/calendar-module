@@ -7142,11 +7142,7 @@
           slotMetrics = props.slotMetrics,
           components = props.components;
       var continuesPrior = slotMetrics.continuesPrior(event);
-      var continuesAfter = slotMetrics.continuesAfter(event); // let NewEvents = event.forEach(event => {
-      //   event.start = event.start_date_time
-      //   event.end = event.end_date_time
-      // })
-
+      var continuesAfter = slotMetrics.continuesAfter(event);
       return React__default.createElement(EventCell, {
         event: event,
         getters: getters,
@@ -7167,6 +7163,10 @@
         content = ' ';
       }
 
+      if (len === 5) {
+        len = 6;
+      }
+
       var per = Math.abs(len) / slots * 100 + '%';
       return React__default.createElement("div", {
         key: key,
@@ -7177,7 +7177,7 @@
           flexBasis: per,
           maxWidth: per
         }
-      }, content);
+      }, per, content, slots, len);
     }
   };
 
@@ -7198,8 +7198,10 @@
       var _this$props = this.props,
           segments = _this$props.segments,
           slots = _this$props.slotMetrics.slots,
-          className = _this$props.className;
+          className = _this$props.className,
+          levelId = _this$props.levelId;
       var lastEnd = 1;
+      if (levelId !== 0) return null;
       return React__default.createElement("div", {
         className: clsx(className, 'rbc-row')
       }, segments.reduce(function (row, _ref, li) {
@@ -10150,12 +10152,10 @@
       }, eventRowProps), levels.map(function (segs, idx) {
         return React__default.createElement(EventRow, _extends({
           key: idx,
+          levelId: idx,
           segments: segs
         }, eventRowProps));
-      }), !!extra.length && React__default.createElement(EventEndingRow, _extends({
-        segments: extra,
-        onShowMore: this.handleShowMore
-      }, eventRowProps)))));
+      }))));
     };
 
     return DateContentRow;

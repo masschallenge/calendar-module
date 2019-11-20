@@ -5,16 +5,18 @@
   box-sizing: border-box;
   box-shadow: none;
   margin: 0;
-  padding: $event-padding;
   background-color: #fff;
   border-radius: $event-border-radius;
   color: $event-bg;
   cursor: pointer;
-  width: 100%;
   text-align: left;
   position: absolute;
   top: 0;
-  width: 37px;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   .rbc-slot-selecting & {
     cursor: inherit;
