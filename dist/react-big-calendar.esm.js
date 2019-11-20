@@ -260,7 +260,6 @@ function (_React$Component) {
         slotEnd = _this$props.slotEnd,
         props = _objectWithoutPropertiesLoose(_this$props, ["style", "className", "event", "selected", "isAllDay", "onSelect", "onDoubleClick", "localizer", "continuesPrior", "continuesAfter", "accessors", "getters", "children", "components", "slotStart", "slotEnd"]);
 
-    var title = accessors.title(event);
     var tooltip = accessors.tooltip(event);
     var end = accessors.end(event);
     var start = accessors.start(event);
@@ -1803,10 +1802,7 @@ var DateHeader = function DateHeader(_ref) {
     return React.createElement("span", null, label);
   }
 
-  return React.createElement("a", {
-    href: "#",
-    onClick: onDrillDown
-  }, label);
+  return React.createElement("span", null, label);
 };
 
 DateHeader.propTypes = process.env.NODE_ENV !== "production" ? {

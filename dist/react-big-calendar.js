@@ -2713,7 +2713,6 @@
           slotEnd = _this$props.slotEnd,
           props = _objectWithoutPropertiesLoose(_this$props, ["style", "className", "event", "selected", "isAllDay", "onSelect", "onDoubleClick", "localizer", "continuesPrior", "continuesAfter", "accessors", "getters", "children", "components", "slotStart", "slotEnd"]);
 
-      var title = accessors.title(event);
       var tooltip = accessors.tooltip(event);
       var end = accessors.end(event);
       var start = accessors.start(event);
@@ -10213,10 +10212,7 @@
       return React__default.createElement("span", null, label);
     }
 
-    return React__default.createElement("a", {
-      href: "#",
-      onClick: onDrillDown
-    }, label);
+    return React__default.createElement("span", null, label);
   };
 
   DateHeader.propTypes = {

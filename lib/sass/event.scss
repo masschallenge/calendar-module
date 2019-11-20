@@ -1,14 +1,14 @@
 @import './variables';
 
 .rbc-event {
-  border: none;
+  border: 1px solid #87d5de;
   box-sizing: border-box;
   box-shadow: none;
   margin: 0;
   padding: $event-padding;
-  background-color: $event-bg;
+  background-color: #fff;
   border-radius: $event-border-radius;
-  color: $event-color;
+  color: $event-bg;
   cursor: pointer;
   width: 100%;
   text-align: left;
@@ -23,6 +23,8 @@
 
   &.rbc-selected {
     background-color: $event-bg;
+    color: #fff;
+    border: 1px solid $event-bg;
   }
 
   &:focus {

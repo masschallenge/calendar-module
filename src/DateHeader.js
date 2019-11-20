@@ -6,11 +6,7 @@ const DateHeader = ({ label, drilldownView, onDrillDown }) => {
     return <span>{label}</span>
   }
 
-  return (
-    <a href="#" onClick={onDrillDown}>
-      {label}
-    </a>
-  )
+  return <span>{label}</span>
 }
 
 DateHeader.propTypes = {
