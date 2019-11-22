@@ -1248,10 +1248,6 @@ var EventRowMixin = {
       content = ' ';
     }
 
-    if (len === 5) {
-      len = 6;
-    }
-
     var per = Math.abs(len) / slots * 100 + '%';
     return React.createElement("div", {
       key: key,
@@ -1262,7 +1258,7 @@ var EventRowMixin = {
         flexBasis: per,
         maxWidth: per
       }
-    }, per, content, slots, len);
+    }, content);
   }
 };
 
@@ -1647,6 +1643,10 @@ function (_React$Component) {
           className = _this$props4.className,
           range = _this$props4.range,
           renderHeader = _this$props4.renderHeader;
+      {
+        // eslint-disable-next-line no-console
+        console.log(range);
+      }
       return React.createElement("div", {
         className: className
       }, React.createElement("div", {

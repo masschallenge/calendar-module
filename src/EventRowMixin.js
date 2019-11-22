@@ -60,9 +60,6 @@ export default {
   },
 
   renderSpan(slots, len, key, content = ' ') {
-    if (len === 5) {
-      len = 6
-    }
     let per = (Math.abs(len) / slots) * 100 + '%'
 
     return (
@@ -72,10 +69,7 @@ export default {
         // IE10/11 need max-width. flex-basis doesn't respect box-sizing
         style={{ WebkitFlexBasis: per, flexBasis: per, maxWidth: per }}
       >
-        {per}
         {content}
-        {slots}
-        {len}
       </div>
     )
   },

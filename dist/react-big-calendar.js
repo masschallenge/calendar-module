@@ -7163,10 +7163,6 @@
         content = ' ';
       }
 
-      if (len === 5) {
-        len = 6;
-      }
-
       var per = Math.abs(len) / slots * 100 + '%';
       return React__default.createElement("div", {
         key: key,
@@ -7177,7 +7173,7 @@
           flexBasis: per,
           maxWidth: per
         }
-      }, per, content, slots, len);
+      }, content);
     }
   };
 
@@ -10057,6 +10053,10 @@
             className = _this$props4.className,
             range = _this$props4.range,
             renderHeader = _this$props4.renderHeader;
+        {
+          // eslint-disable-next-line no-console
+          console.log(range);
+        }
         return React__default.createElement("div", {
           className: className
         }, React__default.createElement("div", {
