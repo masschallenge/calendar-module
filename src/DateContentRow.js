@@ -72,10 +72,6 @@ class DateContentRow extends React.Component {
 
   renderDummy = () => {
     let { className, range, renderHeader } = this.props
-    {
-      // eslint-disable-next-line no-console
-      console.log(range)
-    }
     return (
       <div className={className}>
         <div className="rbc-row-content">

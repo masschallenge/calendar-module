@@ -43,7 +43,7 @@ class EventCell extends React.Component {
             event={event}
             continuesPrior={continuesPrior}
             continuesAfter={continuesAfter}
-            title={localizer.format(event.end, 'DD')}
+            title={localizer.format(event.end, 'D')}
             isAllDay={allDay}
             localizer={localizer}
             slotStart={slotStart}

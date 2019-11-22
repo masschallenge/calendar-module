@@ -84,6 +84,9 @@ button.rbc-input::-moz-focus-inner {
   -webkit-user-select: none;
   z-index: 4; }
 
+.rbc-row-content > .rbc-row:not(:first-child) {
+  justify-content: initial; }
+
 .rbc-today {
   background-color: #eaf6ff;
   color: #077291;

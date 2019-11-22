@@ -19,14 +19,16 @@ class Toolbar extends React.Component {
           <button
             type="button"
             onClick={this.navigate.bind(null, navigate.PREVIOUS)}
+            className="ui mini default round button"
           >
-            <i className="fas fa-chevron-left" />
+            <i className="fas fa-chevron-left" aria-hidden="true" />
           </button>
           <button
             type="button"
             onClick={this.navigate.bind(null, navigate.NEXT)}
+            className="ui mini default round button"
           >
-            <i className="fas fa-chevron-right" />
+            <i className="fas fa-chevron-right" aria-hidden="true" />
           </button>
         </span>
 

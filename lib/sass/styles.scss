@@ -87,6 +87,10 @@
   z-index: 4;
 }
 
+.rbc-row-content > .rbc-row:not(:first-child) {
+  justify-content: initial;
+}
+
 .rbc-today {
   background-color: $today-highlight-bg;
   color: #077291;

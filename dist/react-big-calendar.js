@@ -2727,7 +2727,7 @@
         event: event,
         continuesPrior: continuesPrior,
         continuesAfter: continuesAfter,
-        title: localizer.format(event.end, 'DD'),
+        title: localizer.format(event.end, 'D'),
         isAllDay: allDay,
         localizer: localizer,
         slotStart: slotStart,
@@ -10053,10 +10053,6 @@
             className = _this$props4.className,
             range = _this$props4.range,
             renderHeader = _this$props4.renderHeader;
-        {
-          // eslint-disable-next-line no-console
-          console.log(range);
-        }
         return React__default.createElement("div", {
           className: className
         }, React__default.createElement("div", {
@@ -13248,14 +13244,18 @@
         className: "rbc-btn-group"
       }, React__default.createElement("button", {
         type: "button",
-        onClick: this.navigate.bind(null, navigate.PREVIOUS)
+        onClick: this.navigate.bind(null, navigate.PREVIOUS),
+        className: "ui mini default round button"
       }, React__default.createElement("i", {
-        className: "fas fa-chevron-left"
+        className: "fas fa-chevron-left",
+        "aria-hidden": "true"
       })), React__default.createElement("button", {
         type: "button",
-        onClick: this.navigate.bind(null, navigate.NEXT)
+        onClick: this.navigate.bind(null, navigate.NEXT),
+        className: "ui mini default round button"
       }, React__default.createElement("i", {
-        className: "fas fa-chevron-right"
+        className: "fas fa-chevron-right",
+        "aria-hidden": "true"
       }))), React__default.createElement("span", {
         className: "rbc-toolbar-label"
       }, label));
