@@ -16,6 +16,7 @@ import { request, cancel } from 'dom-helpers/animationFrame';
 import getOffset from 'dom-helpers/offset';
 import getScrollTop from 'dom-helpers/scrollTop';
 import getScrollLeft from 'dom-helpers/scrollLeft';
+import moment$1 from 'moment';
 import Overlay from 'react-overlays/Overlay';
 import getHeight from 'dom-helpers/height';
 import qsa from 'dom-helpers/querySelectorAll';
@@ -264,7 +265,7 @@ function (_React$Component) {
     var end = accessors.end(event);
     var start = accessors.start(event);
     var allDay = accessors.allDay(event);
-    var newTitle = localizer.format(event.end, 'DD');
+    var newTitle = moment$1(event.end, 'YYYY-MM-DD').format('DD');
     var showAsAllDay = isAllDay || allDay || diff(start, ceil(end, 'day'), 'day') > 1;
     var userProps = getters.eventProp(event, start, end, selected);
     var content = React.createElement("div", {
@@ -274,7 +275,7 @@ function (_React$Component) {
       event: event,
       continuesPrior: continuesPrior,
       continuesAfter: continuesAfter,
-      title: localizer.format(event.end, 'D'),
+      title: moment$1(start, 'YYYY-MM-DD').format('D'),
       isAllDay: allDay,
       localizer: localizer,
       slotStart: slotStart,

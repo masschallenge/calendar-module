@@ -2,6 +2,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import clsx from 'clsx'
 import * as dates from './utils/dates'
+import moment from 'moment'
 
 class EventCell extends React.Component {
   render() {
@@ -29,7 +30,7 @@ class EventCell extends React.Component {
     let end = accessors.end(event)
     let start = accessors.start(event)
     let allDay = accessors.allDay(event)
-    let newTitle = localizer.format(event.end, 'DD')
+    let newTitle = moment(event.end, 'YYYY-MM-DD').format('DD')
 
     let showAsAllDay =
       isAllDay || allDay || dates.diff(start, dates.ceil(end, 'day'), 'day') > 1
@@ -43,7 +44,7 @@ class EventCell extends React.Component {
             event={event}
             continuesPrior={continuesPrior}
             continuesAfter={continuesAfter}
-            title={localizer.format(event.end, 'D')}
+            title={moment(start, 'YYYY-MM-DD').format('D')}
             isAllDay={allDay}
             localizer={localizer}
             slotStart={slotStart}
