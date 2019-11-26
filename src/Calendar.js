@@ -25,7 +25,7 @@ import defaults from 'lodash/defaults'
 import transform from 'lodash/transform'
 import mapValues from 'lodash/mapValues'
 import { wrapAccessor } from './utils/accessors'
-import moment from 'moment'
+import moment from 'moment-timezone'
 
 function viewNames(_views) {
   return !Array.isArray(_views) ? Object.keys(_views) : _views
@@ -871,6 +871,8 @@ class Calendar extends React.Component {
       formats: _1,
       messages: _2,
       culture: _3,
+      // eslint-disable-next-line react/prop-types
+      timezone,
       ...props
     } = this.props
 
@@ -890,10 +892,13 @@ class Calendar extends React.Component {
 
     let formattedEvent = events => {
       events.forEach(event => {
-        const start = event.start_date_time.substring(0, 10)
+        const timeZoneDate = moment(event.start_date_time)
+          .tz(timezone)
+          .format('YYYY MM DD')
+          .toString()
+        const start = timeZoneDate.substring(0, 10)
         event.start = moment(start, 'YYYY-MM-DD')
-        const end = event.end_date_time.substring(0, 10)
-        event.end = moment(end, 'YYYY-MM-DD')
+        event.end = moment(start, 'YYYY-MM-DD')
       })
 
       return events

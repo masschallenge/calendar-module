@@ -36,6 +36,7 @@ import omit from 'lodash-es/omit';
 import defaults from 'lodash-es/defaults';
 import transform from 'lodash-es/transform';
 import mapValues from 'lodash-es/mapValues';
+import moment$2 from 'moment-timezone';
 
 function NoopWrapper(props) {
   return props.children;
@@ -4605,7 +4606,8 @@ function (_React$Component) {
         _1 = _this$props4.formats,
         _2 = _this$props4.messages,
         _3 = _this$props4.culture,
-        props = _objectWithoutPropertiesLoose(_this$props4, ["view", "toolbar", "events", "style", "className", "elementProps", "date", "getNow", "length", "showMultiDayTimes", "onShowMore", "components", "formats", "messages", "culture"]);
+        timezone = _this$props4.timezone,
+        props = _objectWithoutPropertiesLoose(_this$props4, ["view", "toolbar", "events", "style", "className", "elementProps", "date", "getNow", "length", "showMultiDayTimes", "onShowMore", "components", "formats", "messages", "culture", "timezone"]);
 
     current = current || getNow();
     var View = this.getView();
@@ -4623,10 +4625,10 @@ function (_React$Component) {
 
     var formattedEvent = function formattedEvent(events) {
       events.forEach(function (event) {
-        var start = event.start_date_time.substring(0, 10);
-        event.start = moment$1(start, 'YYYY-MM-DD');
-        var end = event.end_date_time.substring(0, 10);
-        event.end = moment$1(end, 'YYYY-MM-DD');
+        var timeZoneDate = moment$2(event.start_date_time).tz(timezone).format('YYYY MM DD').toString();
+        var start = timeZoneDate.substring(0, 10);
+        event.start = moment$2(start, 'YYYY-MM-DD');
+        event.end = moment$2(start, 'YYYY-MM-DD');
       });
       return events;
     };
