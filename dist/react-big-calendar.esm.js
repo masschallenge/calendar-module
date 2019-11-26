@@ -4623,8 +4623,10 @@ function (_React$Component) {
 
     var formattedEvent = function formattedEvent(events) {
       events.forEach(function (event) {
-        event.start = event.start_date_time;
-        event.end = event.end_date_time;
+        var start = event.start_date_time.substring(0, 10);
+        event.start = moment$1(start, 'YYYY-MM-DD');
+        var end = event.end_date_time.substring(0, 10);
+        event.end = moment$1(end, 'YYYY-MM-DD');
       });
       return events;
     };

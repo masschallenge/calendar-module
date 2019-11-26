@@ -25,6 +25,7 @@ import defaults from 'lodash/defaults'
 import transform from 'lodash/transform'
 import mapValues from 'lodash/mapValues'
 import { wrapAccessor } from './utils/accessors'
+import moment from 'moment'
 
 function viewNames(_views) {
   return !Array.isArray(_views) ? Object.keys(_views) : _views
@@ -889,8 +890,10 @@ class Calendar extends React.Component {
 
     let formattedEvent = events => {
       events.forEach(event => {
-        event.start = event.start_date_time
-        event.end = event.end_date_time
+        const start = event.start_date_time.substring(0, 10)
+        event.start = moment(start, 'YYYY-MM-DD')
+        const end = event.end_date_time.substring(0, 10)
+        event.end = moment(end, 'YYYY-MM-DD')
       })
 
       return events
