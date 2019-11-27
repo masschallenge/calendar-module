@@ -871,8 +871,6 @@ class Calendar extends React.Component {
       formats: _1,
       messages: _2,
       culture: _3,
-      // eslint-disable-next-line react/prop-types
-      timezone,
       ...props
     } = this.props
 
@@ -893,7 +891,7 @@ class Calendar extends React.Component {
     let formattedEvent = events => {
       events.forEach(event => {
         const timeZoneDate = moment(event.start_date_time)
-          .tz(timezone)
+          .tz(event.timezone)
           .format('YYYY MM DD')
           .toString()
         const start = timeZoneDate.substring(0, 10)
