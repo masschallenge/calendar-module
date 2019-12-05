@@ -19889,8 +19889,7 @@
           _1 = _this$props4.formats,
           _2 = _this$props4.messages,
           _3 = _this$props4.culture,
-          timezone = _this$props4.timezone,
-          props = _objectWithoutPropertiesLoose(_this$props4, ["view", "toolbar", "events", "style", "className", "elementProps", "date", "getNow", "length", "showMultiDayTimes", "onShowMore", "components", "formats", "messages", "culture", "timezone"]);
+          props = _objectWithoutPropertiesLoose(_this$props4, ["view", "toolbar", "events", "style", "className", "elementProps", "date", "getNow", "length", "showMultiDayTimes", "onShowMore", "components", "formats", "messages", "culture"]);
 
       current = current || getNow();
       var View = this.getView();
@@ -19908,7 +19907,7 @@
 
       var formattedEvent = function formattedEvent(events) {
         events.forEach(function (event) {
-          var timeZoneDate = momentTimezone$1(event.start_date_time).tz(timezone).format('YYYY MM DD').toString();
+          var timeZoneDate = momentTimezone$1(event.start_date_time).tz(event.timezone).format('YYYY MM DD').toString();
           var start = timeZoneDate.substring(0, 10);
           event.start = momentTimezone$1(start, 'YYYY-MM-DD');
           event.end = momentTimezone$1(start, 'YYYY-MM-DD');
